@@ -42,6 +42,13 @@
                             <input type="checkbox" ng-model="sync" ng-change="changeSync(sync)"> Sync this URL across browsers?
                         </label>
                     </p>
+                    <p>
+                      Delay loading of URL for
+		      <label>
+                          <input type="number" ng-model="delay" min="0" ngMaxLength="5" step="1" ng-change="changeDelay(delay)">
+                      </label>
+		      seconds.
+                    </p>
                     <h3>One click save...</h3>
                     <div class="column2">
                         <h4>Popular Pages</h4>
@@ -180,7 +187,7 @@
 <footer>
     <div style="float:left;">
         <p>
-            <a href="http://www.ipreferjim.com">&copy; James Schubert, 2009-2019</a>
+            <a href="http://www.ipreferjim.com">&copy; James Schubert, 2009-2020</a>
             &nbsp;|&nbsp;
             <a href="http://github.com/jimschubert/newtab-redirect" target="_blank">Report bugs</a>
             &nbsp;|&nbsp;

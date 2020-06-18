@@ -16,11 +16,12 @@
                     .then(function (result) {
                         $scope.sync = result.syncOptions || result.syncOptions !== false;
 
-                        return Storage[$scope.sync ? 'getSync' : 'getLocal'](['url', 'always-tab-update']);
+                        return Storage[$scope.sync ? 'getSync' : 'getLocal'](['url', 'always-tab-update', 'delay']);
                     })
                     .then(function (result) {
                         $scope.url = result.url;
                         $scope.alwaysTabUpdate = result['always-tab-update'];
+			$scope.delay = result['delay'];
                     });
             }
 
@@ -34,7 +35,8 @@
             $scope.save = function () {
                 var promise = Storage[$scope.sync ? 'saveSync' : 'saveLocal']({
                     'url': $scope.url,
-                    'always-tab-update': $scope.alwaysTabUpdate
+                    'always-tab-update': $scope.alwaysTabUpdate,
+		    'delay': $scope.delay
                 });
                 promise.then(function () {
                     $scope.show_saved = true;
@@ -62,6 +64,10 @@
                 Storage.saveLocal({'always-tab-update': selected});
             };
 
+	    $scope.changeDelay = function (selected) {
+		Storage.saveLocal({'delay' : selected});
+	    };
+	    
             $scope.getSyncedUrl = function () {
                 Storage.getSync(['url'])
                     .then(function (result) {

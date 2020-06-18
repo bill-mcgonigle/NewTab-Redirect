@@ -21,6 +21,9 @@ Files can begin with: `file:\\`, `file://`, and `file:///`
 **Important:** 
 This is not meant to replace your homepage, only new tabs.  If your browser is set to load the New Tab page as your homepage, there may be odd consequences.
 
+## Delayed loading
+
+If you don't want to wait for your custom URL to load if you're about to type a new URL anyway, you might consider setting a delay in the options that gives you enough time to type.  If you don't type a different location or perform another navigation action before the timeout, the URL will be loaded.  The omnibar will have focus until the URL is loaded.
 
 ## Omnibar support
 
