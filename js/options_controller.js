@@ -21,7 +21,7 @@
                     .then(function (result) {
                         $scope.url = result.url;
                         $scope.alwaysTabUpdate = result['always-tab-update'];
-			$scope.delay = result['delay'];
+                        $scope.delay = result['delay'];
                     });
             }
 
@@ -36,7 +36,7 @@
                 var promise = Storage[$scope.sync ? 'saveSync' : 'saveLocal']({
                     'url': $scope.url,
                     'always-tab-update': $scope.alwaysTabUpdate,
-		    'delay': $scope.delay
+                    'delay': $scope.delay
                 });
                 promise.then(function () {
                     $scope.show_saved = true;
